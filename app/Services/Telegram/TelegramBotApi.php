@@ -18,12 +18,12 @@ class TelegramBotApi
         int $chat_id,
         string $text
     ): bool {
-        return Http::get(self::HOST.$token.'/sendMessage', [
-            'chat_id' => $chat_id,
-            'text' => $text,
-        ])->throw()
+        return Http::get(self::HOST.$token.'/sendMessage',
+            [
+                'chat_id' => $chat_id,
+                'text' => $text,
+            ])->throw()
             ->successful();
-
     }
 
 }
